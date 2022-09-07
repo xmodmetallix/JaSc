@@ -34,20 +34,19 @@ console.log(productos);
 while (seguirComprando === true) {
     if (productoSeleccionado === 1) {
         carrito.push(productos[0]);
-    } else if (productoSeleccionado === 2) {
+    }
+    else if (productoSeleccionado === 2) {
         carrito.push(productos[1]);
-    } else if (productoSeleccionado === 3) {
+    }
+    else if (productoSeleccionado === 3) {
         carrito.push(productos[2]);
-    } else if (productoSeleccionado === 4) {
-        carrito.push(productos[3]);
-        productoSeleccionado = parseInt(prompt("Ingrese el número del producto que desee adquirir: \n 1.-Guitarra \n 2.-Bajo \n 3.-Bateria"));
-        continue;
     }
 
     decision = parseInt(prompt("¿Desea seguir haciendo compras? \n 1.-Si \n 2.- No"));
     if (decision === 1) {
         productoSeleccionado = parseInt(prompt("Ingrese el número del producto que desee adquirir: \n 1.-Guitarra \n 2.-Bajo \n 3.-Bateria"));
-    } else if (decision === 2) {
+    }
+    else if (decision === 2) {
         seguirComprando = false;
     }
 }
