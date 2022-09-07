@@ -54,12 +54,7 @@ while (seguirComprando === true) {
 console.log(carrito);
 
 for (let i = 0; i < carrito.length; i++) {
-    totalCompra = totalCompra + carrito[i].Precio
+    totalCompra = totalCompra + carrito[i].Precio;
 }
-
-for (const prod of carrito) {
-    totalCompra = totalCompra + prod.Precio
-}
-
 
 alert("¡Gracias por su compra! \n El total de su compra es de $" + totalCompra);
