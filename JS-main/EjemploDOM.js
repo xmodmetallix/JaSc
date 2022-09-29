@@ -45,6 +45,15 @@ botonIngresar.onclick = () => {
     password: inputPassword.value,
   }
   localStorage.setItem('usuarioStorage', JSON.stringify(usuario))
+  Swal.fire({
+    title: 'Bienvenido a Bonehead, '+ JSON.stringify(usuario.nombre),
+    showClass: {
+      popup: 'animate__animated animate__fadeInDown'
+    },
+    hideClass: {
+      popup: 'animate__animated animate__fadeOutUp'
+    }
+  })
 }
 productos.forEach((producto) => {
   const option = document.createElement('option');
@@ -67,6 +76,19 @@ document.body.append(boton2);
 boton.onclick = () => {
   const productoSeleccionado = productos[selectTag.selectedIndex];
   carrito.push(productoSeleccionado);
+  Toastify({
+    text: "El artículo " + JSON.stringify(productoSeleccionado.Marca) + " Fue añadido a su carrito",
+    duration: 3000,
+    destination: "https://github.com/apvarun/toastify-js",
+    newWindow: true,
+    close: true,
+    gravity: "top", // `top` or `bottom`
+    position: "right", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: "linear-gradient(to right, #00b09b, #96c93d)",
+    },
+  }).showToast();
 }
 
 boton2.onclick = () => {
@@ -75,8 +97,5 @@ boton2.onclick = () => {
   carrito.forEach((prod) => {
     totalCompra = totalCompra + prod.Precio;
   })
-
-  const p = document.createElement('p');
-  p.innerText = `El Precio total a pagar es de : $${totalCompra}`;
-  document.body.append(p);
+  Swal.fire( `El Precio total a pagar es de: $${totalCompra}`);
 }
