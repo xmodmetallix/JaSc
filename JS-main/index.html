@@ -6,8 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Document</title>
+    <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('s7WLcK-kpq6GcZFa5')
+</script>
 </head>
 <body>
+    <form id="form">
+        <h2>¡Ponte en contacto con nosotros!</h2>
+        <div class="field">
+          <label for="from_name">Nombre</label>
+          <input type="text" name="from_name" id="from_name">
+        </div>
+        <div class="field">
+          <label for="email_id">E-Mail</label>
+          <input type="text" name="email_id" id="email_id">
+        </div>
+        <div class="field">
+          <label for="message">Mensaje</label>
+          <input type="text" name="message" id="message">
+        </div>
+        <input type="submit" id="button" value="Enviar Email" >
+      </form>
     <div class="DivBienvenida"><h2>BIENVENIDO A BONEHEAD, POR FAVOR, CREA UNA CUENTA</h2></div>
         <div class="DivDatos">
           Nombre:<input type="text" name="nombre" id="nombre" /> <br> <br>
@@ -16,7 +38,9 @@
           Contraseña:<input type="password" name="password" id="password" /> <br> <br>
           <button id="botonIngresar">INGRESAR</button> <br> <br> <br> <br>
         </div>
-    <select name="lista" id="lista"></select>
+    <div class="DivCarrito">
+        <select name="lista" id="lista"></select>
+    </div>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="EjemploDOM.js">

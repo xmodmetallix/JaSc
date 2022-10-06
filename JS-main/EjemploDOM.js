@@ -5,6 +5,7 @@ const inputPassword = document.getElementById("password");
 const botonIngresar = document.getElementById("botonIngresar");
 const divDatos = document.getElementById("DivDatos");
 const DivBienvenida = document.getElementById("DivBienvenida");
+const DivCarrito = document.getElementById("DivCarrito");
 
 let productos = [];
 
@@ -99,3 +100,24 @@ boton2.onclick = () => {
   })
   Swal.fire( `El Precio total a pagar es de: $${totalCompra}`);
 }
+
+const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Enviando...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_ath33vt';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      Swal.fire("¡El correo se envió satisfactoriamente!");
+    }, (err) => {
+      btn.value = 'Enviar Email';
+      alert(JSON.stringify(err));
+    });
+});
